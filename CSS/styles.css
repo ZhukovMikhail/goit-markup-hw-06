@@ -5,6 +5,12 @@
   --font-color: #212121;
   --project-card-gap: 30px;
   --icons-color: #afb1b8;
+  --transition-hover-focus: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-image 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /*--transition-linear-gradient: 250ms cubic-bezier(0.4, 0, 0.2, 1);*/
 }
 h1,
 h2,
@@ -101,10 +107,23 @@ body {
   color: var(--font-color);
   padding-top: 32px;
   padding-bottom: 32px;
+  transition: var(--transition-hover-focus);
 }
 .current {
   color: var(--accent-color);
+  position: relative;
 }
+.current::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 4px;
+  background: #2196f3;
+  border-radius: 2px;
+  left: 0;
+  bottom: 0;
+}
+
 .nav-link:hover,
 .nav-link:focus,
 .cont-link:hover,
@@ -126,6 +145,7 @@ body {
   padding-bottom: 32px;
   display: flex;
   align-items: center;
+  transition: var(--transition-hover-focus);
 }
 .cont-icon {
   margin-right: 10px;
@@ -183,6 +203,7 @@ body {
   color: #ffffff;
   cursor: pointer;
   border-style: hidden;
+  /*transition: background-image 250ms cubic-bezier(0.4, 0, 0.2, 1);*/
 }
 .hero-button:hover {
   background-image: linear-gradient(
@@ -252,7 +273,31 @@ body {
   display: flex;
 }
 .what-we-do-item:not(:last-child) {
-  padding-right: 30px;
+  margin-right: 30px;
+}
+.what-we-do-item {
+  position: relative;
+}
+
+.what-we-do-text {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: rgba(47, 48, 58, 0.8);
 }
 .pict-title {
   font-weight: 500;
@@ -320,6 +365,7 @@ body {
   align-items: center;
   justify-content: center;
   fill: var(--icons-color);
+  transition: var(--transition-hover-focus);
 }
 .social-links-list-links:hover,
 .social-links-list-links:focus {
@@ -343,6 +389,7 @@ body {
   fill: var(--icons-color);
   border: 1px solid #afb1b8;
   border-radius: 4px;
+  transition: var(--transition-hover-focus);
 }
 .clients-list-links:hover {
   fill: var(--accent-color);
@@ -378,6 +425,7 @@ body {
   line-height: 1.714;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
+  transition: var(--transition-hover-focus);
 }
 .footer-adress {
   margin-top: 20px;
@@ -412,6 +460,7 @@ body {
 .footer .social-links-list-links {
   background-color: rgba(255, 255, 255, 0.1);
   fill: #ffffff;
+  transition: var(--transition-hover-focus);
 }
 
 .footer .social-links-list:not(:last-child) {
@@ -447,6 +496,7 @@ body {
   letter-spacing: 0.03em;
   cursor: pointer;
   padding: 6px 22px;
+  transition: var(--transition-hover-focus);
 }
 .main-buttons-list:not(:last-child) {
   margin-right: 8px;
@@ -485,10 +535,30 @@ body {
   flex-basis: calc(100% / 3 - var(--project-card-gap));
   margin-left: var(--project-card-gap);
   margin-top: var(--project-card-gap);
+  transition: var(--transition-hover-focus);
 }
-.project-item:hover {
+.project-item:hover,
+.project-item:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.project-overlay-box {
+  position: relative;
+  /*overflow: hidden;*/
+}
+ {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(33, 150, 243, 0.9);
+  transform: translatey(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.project-overlay-box:hover .overlay,
+.project-overlay-box:focus .overlay {
+  transform: translatey(0);
 }
 
 .project-card {
@@ -512,4 +582,5 @@ body {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
 /*============Portfolio main sec End==============*/
