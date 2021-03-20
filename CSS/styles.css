@@ -635,6 +635,7 @@ body {
 .modal-close-btn:focus {
   background-color: rgba(47, 48, 58, 0.4);
   fill: #fff;
+  outline: none;
 }
 .close-btn-icon {
   margin: auto auto;
