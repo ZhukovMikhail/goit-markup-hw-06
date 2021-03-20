@@ -196,19 +196,13 @@ body {
   color: #ffffff;
   cursor: pointer;
   border-style: hidden;
+  transition: var(--transition-hover-focus);
 }
 
-.hero-button:hover {
-  background-image: linear-gradient(
-    rgba(47, 48, 58, 0.4),
-    rgba(47, 48, 58, 0.4)
-  );
-}
+.hero-button:hover,
 .hero-button:focus {
-  background-image: linear-gradient(
-    rgba(47, 48, 58, 0.4),
-    rgba(47, 48, 58, 0.4)
-  );
+  color: #ffffffee;
+  background: #097fe0;
   outline: none;
 }
 /*===========Section Hero END==========*/
