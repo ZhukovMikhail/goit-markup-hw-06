@@ -613,6 +613,7 @@ body {
   visibility: hidden;
   pointer-events: none;
   opacity: 0;
+  transform: translate(-300%, -200%);
 }
 .modal-close-btn {
   position: absolute;
