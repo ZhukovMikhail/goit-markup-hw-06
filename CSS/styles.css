@@ -2,11 +2,14 @@
   --main-font: 'Roboto', sans-serif;
   --secondary-font: 'Raleway', sans-serif;
   --accent-color: #2196f3;
+  --hover-btn-color: #188ce8;
   --font-color: #212121;
   --project-card-gap: 30px;
   --icons-color: #afb1b8;
   --transition-hover-focus: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    outline-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-image 250ms cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -207,7 +210,7 @@ body {
 .fotter-submit-button:hover,
 .fotter-submit-button:focus {
   color: #ffffffee;
-  background: #097fe0;
+  background: var(--hover-btn-color);
   outline: none;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
@@ -675,6 +678,7 @@ body {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  padding: 40px;
 }
 .is-hidden {
   visibility: hidden;
@@ -704,8 +708,98 @@ body {
   width: 18px;
   height: 18px;
 }
-.user-data-form {
-  position: absolute;
-}
+/* ====== user data form ========== */
 
+.user-data-form {
+  width: 100%;
+  height: 40px;
+  margin-top: 4px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transition-hover-focus);
+}
+.textarea {
+  height: 120px;
+  padding: 12px 16px;
+  resize: none;
+  font-family: var(--main-font);
+  font-size: 12px;
+  line-height: 1.166;
+  letter-spacing: 0.01em;
+  fill-opacity: 0.5;
+  /* border: 1px solid rgba(33, 33, 33, 0.2); */
+}
+.modal-text {
+  margin-bottom: 12px;
+  font-family: var(--main-font);
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #212121;
+}
+.user-data-label {
+  display: block;
+  margin-top: 10px;
+  font-family: var(--main-font);
+  font-size: 12px;
+  line-height: 1.167;
+  letter-spacing: 0.01em;
+  color: #757575;
+  cursor: pointer;
+}
+.modal-text-link {
+  margin-left: 8px;
+  font-family: var(--main-font);
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: #757575;
+  /* white-space: nowrap; */
+}
+.agreement {
+  margin-left: 3.5px;
+  font-family: var(--main-font);
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: #2196f3;
+}
+.user-data-label:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-submit-button {
+  width: 200px;
+  height: 50px;
+  margin: 30px auto;
+  font-family: var(--main-font);
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.87;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.06em;
+
+  color: #ffffff;
+  background: #2196f3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border-style: hidden;
+  transition: var(--transition-hover-focus);
+}
+.user-data-form:hover,
+.user-data-form:focus {
+  border-color: var(--accent-color);
+  outline-color: var(--accent-color);
+}
+.modal-submit-button:hover,
+.modal-submit-button:focus {
+  background-color: var(--hover-btn-color);
+}
 /*============= Modal window End =======================*/

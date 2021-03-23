@@ -334,22 +334,26 @@
 
 <!-- Modal Window -->
 <div class="backdrop is-hidden" data-modal>
-    <div class="modal">
+    <form class="modal" method="GET">
         <button type="button" class="modal-close-btn" data-modal-close>
             <svg class="close-btn-icon">
                 <use href="./images/sprite.svg#icon-close-black-18dp-1"></use>
             </svg>
         </button>
-      <form class="user-data-form"> 
-            <label>Имя<input type="text" name="user-name"></label>
-            <label>Телефон<input type="tel" name="user-tel"></label>
-            <label>Почта<input type="email" name="user-email"></label>
-            <label>Комментарий<textarea type="text" name="user-comment"></label>
-        </form>
+<p class="modal-text">Оставьте свои данные, мы вам перезвоним</p>
+        <label class="user-data-label">Имя<input class="user-data-form" type="text" name="user-name" minlength="3" required></label>
+        <label class="user-data-label">Телефон<input class="user-data-form" type="tel" name="user-tel" required></label>
+        <label class="user-data-label">Почта<input class="user-data-form" type="email" name="user-email" required></label>
+        <label class="user-data-label">Комментарий <textarea class="user-data-form textarea" type="text" name="user-comment" placeholder="Введите текст"></textarea></label>
+        <label class="user-data-label">
+            <input type="checkbox" name="agreement confirmation" value="agreement confirmation" required><span class="modal-text-link">Соглашаюсь с рассылкой и принимаю</span><a class="agreement" href="#">Условия договора</a>
+        </label>
+    <button type="submit" class="modal-submit-button">Отправить</button>
+    </form>
     </div>
-</div>
-<script src="./js/modal.js"></script>
 
+<script src="./js/modal.js"></script>
 <!-- Modal Window END-->
+
 </body>
 </html>
