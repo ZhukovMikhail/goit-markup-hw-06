@@ -698,11 +698,11 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   transition: var(--transition-hover-focus);
+  background-color: transparent;
 }
 .modal-close-btn:hover,
 .modal-close-btn:focus {
-  background-color: rgba(47, 48, 58, 0.4);
-  fill: #fff;
+  fill: var(--accent-color);
   outline: none;
 }
 .close-btn-icon {
@@ -748,8 +748,16 @@ body {
   color: #212121;
 }
 .user-data-label {
-  /* display: inline-block; */
-  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: var(--main-font);
+  font-size: 12px;
+  line-height: 1.167;
+  letter-spacing: 0.01em;
+  color: #757575;
+  cursor: pointer;
+}
+.user-data-label-comment {
+  margin-bottom: 20px;
   font-family: var(--main-font);
   font-size: 12px;
   line-height: 1.167;
@@ -763,8 +771,8 @@ body {
 }
 .modal-form-icom {
   position: absolute;
-  width: 18px;
-  height: 18px;
+  /* width: 18px;
+  height: 18px; */
   top: 50%;
   left: 12px;
   transform: translateY(-50%);
@@ -776,17 +784,11 @@ body {
   letter-spacing: 0.03em;
   color: #2196f3;
 }
-
-.user-data-label:last-child {
-  justify-content: center;
-  align-items: center;
-}
 .textarea::placeholder {
   color: rgba(117, 117, 117, 0.5);
 }
 .modal-checkbox-label {
   display: flex;
-  margin-top: 20px;
   justify-content: center;
   align-items: center;
   font-family: var(--main-font);
@@ -803,6 +805,7 @@ body {
   height: 15px;
   border: 2px solid #212121;
   border-radius: 15%;
+  transition: var(--transition-hover-focus);
 }
 .modal-checkbox:checked + .modal-checkbox-label::before {
   background-color: var(--accent-color);
@@ -812,7 +815,7 @@ body {
   background-position: 50% 50%;
 }
 .modal-checkbox:focus + .modal-checkbox-label::before {
-  box-shadow: 0 0 0 1px #2196f3;
+  box-shadow: 0 0 0 1px var(--accent-color);
 }
 .modal-submit-button {
   height: 50px;
