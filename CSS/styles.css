@@ -56,7 +56,8 @@ body {
 /*=======Header==========*/
 .header {
   display: flex;
-
+  padding-bottom: 0px;
+  padding-top: 0px;
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: #ececec;
@@ -64,10 +65,9 @@ body {
 .header .container {
   display: flex;
 }
-.header.section {
-  padding-bottom: 0px;
-  padding-top: 0px;
-}
+/* .header.section {
+ 
+} */
 .header-nav {
   display: flex;
   margin-right: auto;
